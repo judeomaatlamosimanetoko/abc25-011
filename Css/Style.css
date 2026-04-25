@@ -13,3 +13,15 @@
   display:flex;
   flex-direct:column;
 }
+.headings
+hi,h2,h3,.logo{
+  font-family:'rajdhadi',sans-serif;
+  font-weight:700;
+  letter-spacing:1px;
+}
+h1{font-size:3.5rem;}
+   h2{font-size:2.5rem;}
+      h3{font-size:1.5rem;}
+         h4{font-size:1.2rem;}
+
+            
