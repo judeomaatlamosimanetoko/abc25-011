@@ -1,26 +1,2 @@
-*
-{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-.body
-{
- background-color:blue;
-  background-image:url('360_F_627083173_OM30vMFCYqOdIumhViW4p2y2DPaDEGmM.jpg');
-  background-repeat:no-repeat;
-  background-position:right-top;
-}
-.headings
-hi,h2,h3,.logo{
-  font-family:'rajdhadi',sans-serif;
-  font-weight:700;
-  letter-spacing:1px;
-}
-.container
-{
-  max-width:1200px;
-   margin:0 auto;
-  padding:0 20px;
-}
-            
+
+  
