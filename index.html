@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jom's Sneakers</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -22,85 +29,80 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sneakers.html">Sneakers</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <main>
         <h2 class="section-title">Featured Products</h2>
 
         <section id="featured-products">
 
+            <!-- PRODUCT 1 -->
             <div class="product-card">
-                <img src="Images/nike-sneakers-hero.jpg" alt="Nike Air Max Sneakers">
+                <a href="product.html">
+                    <img src="images/nike-sneakers-hero.jpg" alt="Nike Air Max">
+                </a>
                 <h3>Nike Air Max</h3>
                 <p class="price">P999</p>
-                <button class="btn">Add to Cart</button>
+                <button onclick="addToCart('Nike Air Max', 999)">Add to Cart</button>
             </div>
 
+            <!-- PRODUCT 2 -->
             <div class="product-card">
-                <img src="Images/W3E4K_SQ1_0000000013_WHITE_SLs.jpeg" alt="Puma Sneakers">
-                <h3>Puma Sneakers</h3>
+                <a href="product.html">
+                    <img src="images/W3E4K_SQ1_0000000013_WHITE_SLs.jpeg" alt="Puma Sneaker">
+                </a>
+                <h3>Puma Sneaker</h3>
                 <p class="price">P900</p>
-                <button class="btn">Add to Cart</button>
+                <button onclick="addToCart('Puma Sneaker', 900)">Add to Cart</button>
             </div>
 
+            <!-- PRODUCT 3 -->
             <div class="product-card">
-                <img src="Images/images (2).jpeg" alt="Nike TN Sneakers">
-                <h3>Nike TN</h3>
+                <a href="product.html">
+                    <img src="images/images (2).jpeg" alt="Nike TN Sneaker">
+                </a>
+                <h3>Nike TN Sneaker</h3>
                 <p class="price">P950</p>
-                <button class="btn">Add to Cart</button>
+                <button onclick="addToCart('Nike TN Sneaker', 950)">Add to Cart</button>
             </div>
 
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer id="sitefooter">
-    <div class="footer-container">
+        <p><strong>Jom's Sneakers</strong></p>
 
-        <!-- Brand -->
-        <div class="footer-brand">
-            <h2>Jom's Sneakers</h2>
-            <p>Your go-to store for the latest and most stylish sneakers.</p>
-        </div>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="sneakers.html">Sneakers</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a>
+        </p>
 
-        <!-- Quick Links -->
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sneakers.html">Sneakers</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+        <p>Email: info@jomssneakers.com</p>
+        <p>Instagram: @joms.sneakers</p>
 
-        <!-- Contact Info -->
-        <div class="footer-contact">
-            <h3>Contact</h3>
-            <p>Email: info@jomssneakers.com</p>
-            <p>Phone: +267 123 4567</p>
-            <p>Location: Gaborone, Botswana</p>
-        </div>
-
-        <!-- Social Media -->
-        <div class="footer-social">
-            <h3>Follow Us</h3>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
         <p>&copy; 2026 Jom's Sneakers. All rights reserved.</p>
-    </div>
     </footer>
 
-    </body>
+    <!-- JS FILE -->
+    <script src="js/cart.js"></script>
+
+    <!-- HAMBURGER MENU -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".navbar ul");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+    </script>
+
+</body>
 </html>
