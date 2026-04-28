@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | Jom's Sneakers</title>
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">
+            <a href="index.html">Jom's Sneakers</a>
+        </h1>
+
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sneakers.html">Sneakers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="product-page">
+
+            <!-- PRODUCT IMAGE -->
+            <div class="product-image">
+                <img src="images/nike-sneakers-hero.jpg" alt="Nike Air Max">
+            </div>
+
+            <!-- PRODUCT DETAILS -->
+            <div class="product-details">
+                <h2>Nike Air Max</h2>
+                <p class="price">P999</p>
+
+                <p class="description">
+                    Experience comfort and style with the Nike Air Max. 
+                    Designed for everyday wear with breathable materials and durable soles.
+                </p>
+
+                <!-- SIZE SELECT -->
+                <label for="size">Select Size:</label>
+                <select id="size">
+                    <option>UK 6</option>
+                    <option>UK 7</option>
+                    <option>UK 8</option>
+                    <option>UK 9</option>
+                    <option>UK 10</option>
+                </select>
+
+                <!-- BUTTON -->
+                <button class="add-cart-btn">Add to Cart</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="sitefooter">
+        <p><strong>Jom's Sneakers</strong></p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="sneakers.html">Sneakers</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+
+        <p>Email: info@jomssneakers.com</p>
+        <p>Instagram: @joms.sneakers</p>
+
+        <p>&copy; 2026 Jom's Sneakers. All rights reserved.</p>
+    </footer>
+
+    <!-- JS (Hamburger Menu) -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".navbar ul");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+    </script>
+
+</body>
+  </html>
