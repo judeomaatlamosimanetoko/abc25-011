@@ -3,12 +3,29 @@
   padding:0;
   box-sizing:border-box;
 } 
-header{
-display:flex;
-align-items: center;
-padding:20px;
-background:radial-gradient(violet,gold);
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333; /* Dark background */
+  color: white; /* Text color */
+  position: sticky; /* Keeps header at top */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds depth */
 }
+
+.main-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.main-header nav a:hover {
+  text-decoration: underline; /* Interaction hint */
+}
+
 
 
   
