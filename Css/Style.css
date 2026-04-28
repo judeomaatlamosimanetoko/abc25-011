@@ -16,15 +16,7 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds depth */
 }
 
-.main-header nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
 
-.main-header nav a:hover {
-  text-decoration: underline; /* Interaction hint */
-}
 
 
 
