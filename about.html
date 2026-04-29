@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Jom's Sneakers - Our story, mission, values, and commitment to delivering premium authentic footwear in Botswana.">
+    <meta name="keywords" content="about us, sneaker store botswana, jom's sneakers story, authentic footwear">
+    <meta name="author" content="Jom's Sneakers">
+    <title>About Us | Jom's Sneakers Story & Mission</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           COMPLETE CSS FOR ABOUT PAGE
+           Professional, clean, plagiarism-free styling
+        ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fefefe;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ----- HEADER & NAVIGATION (Same as main site) ----- */
+        header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2c3e50, #e67e22);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #e67e22;
+        }
+
+        .cart-badge {
+            background: #e67e22;
+            border-radius: 50px;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin-left: 5px;
+            color: white;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        /* ========== ABOUT PAGE HERO ========== */
+        .about-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::after {
+            content: '👟';
+            position: absolute;
+            font-size: 220px;
+            opacity: 0.04;
+            bottom: -40px;
+            right: -30px;
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .about-hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero-content p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .about-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .story-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #e67e22;
+            border-radius: 3px;
+        }
+
+        .story-text p {
+            margin-bottom: 1rem;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .story-image {
+            flex: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Mission & Vision Cards */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            border-color: #e67e2220;
+        }
+
+        .mv-icon {
+            width: 70px;
+            height: 70px;
+            background: #fef3e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+        }
+
+        .mv-icon i {
+            font-size: 2rem;
+            color: #e67e22;
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .mv-card p {
+            color: #475569;
+        }
+
+        /* Values Section */
+        .values-section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .values-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .value-item {
+            background: #f8fafc;
+            padding: 1.8rem 1rem;
+            border-radius: 20px;
+            transition: 0.25s;
+        }
+
+        .value-item:hover {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .value-item i {
+            font-size: 2.2rem;
+            color: #e67e22;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-img {
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 1.2rem;
+        }
+
+        .member-info h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .member-info p {
+            color: #e67e22;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 4px 0;
+        }
+
+        .member-info small {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(120deg, #1e293b, #2d3a4f);
+            border-radius: 32px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-banner h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.25s;
+        }
+
+        .cta-btn:hover {
+            background: #d35400;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2.5rem 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.75rem;
+            border-top: 1px solid #1e293b;
+            margin-top: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            .hamburger {
+                display: block;
+            }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+            }
+            .navbar ul.show {
+                display: flex;
+            }
+            .about-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .story-section {
+                flex-direction: column;
+            }
+            .mv-card {
+                padding: 1.5rem;
+            }
+            .cta-banner h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-container {
+                padding: 2rem 1rem;
+            }
+            .values-grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo"><a href="index.html">Jom's Sneakers</a></div>
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <nav class="navbar">
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sneakers.html">Shop</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartNavCount" class="cart-badge">0</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+    <div class="about-hero-content">
+        <h1>Our Sneaker Story</h1>
+        <p>More than just shoes — we're building a community of sneaker lovers across Botswana.</p>
+    </div>
+</section>
+
+<!-- MAIN ABOUT CONTENT -->
+<div class="about-container">
+
+    <!-- Story Section -->
+    <div class="story-section">
+        <div class="story-text">
+            <h2>The Jom's Journey</h2>
+            <p>Jom's Sneakers was born in 2020 from a simple belief: everyone deserves to step into premium quality footwear without breaking the bank. What started as a small passion project in Gaborone has grown into one of Botswana's most trusted sneaker destinations.</p>
+            <p>Our founder, Jom, realized that sneaker lovers in Botswana struggled to find authentic, trendy footwear at fair prices. Long shipping times, questionable authenticity, and limited options were the norm. So we changed the game.</p>
+            <p>Today, we partner directly with authorized distributors to bring you 100% genuine sneakers from Nike, Adidas, Puma, Jordan, New Balance, and more. Every pair is hand-inspected before it reaches your doorstep.</p>
+        </div>
+        <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600&h=450&fit=crop" alt="Sneaker store collection display">
+        </div>
+    </div>
+
+    <!-- Mission & Vision Cards -->
+    <div class="mission-vision">
+        <div class="mv-card">
+            <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <p>To democratize access to authentic premium sneakers across Botswana by offering competitive prices, exceptional customer service, and a seamless shopping experience.</p>
+        </div>
+        <div class="mv-card">
+            <div class="mv-icon"><i class="fas fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>To become the most loved sneaker retailer in Southern Africa — where style, authenticity, and community come together.</p>
+        </div>
+        <div class="mv-card">
+            <div class="mv-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3>Our Promise</h3>
+            <p>100% authentic products, transparent pricing, fast delivery across Botswana, and a hassle-free return policy. Your trust is our greatest asset.</p>
+        </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="values-section">
+        <h2>What Drives Us</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <i class="fas fa-check-double"></i>
+                <h4>Authenticity First</h4>
+                <p>Every sneaker is verified through official supply chains. No replicas. No shortcuts.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-users"></i>
+                <h4>Community Focused</h4>
+                <p>We listen to our customers and curate drops based on what you actually want.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-leaf"></i>
+                <h4>Sustainable Steps</h4>
+                <p>We're committed to eco-friendly packaging and reducing our carbon footprint.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>Our team is always ready to help with sizing, orders, or any sneaker questions.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section (Friendly faces) -->
+    <div class="team-section">
+        <h2>The Faces Behind the Kicks</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Founder portrait">
+                </div>
+                <div class="member-info">
+                    <h4>Jom Mokwena</h4>
+                    <p>Founder & CEO</p>
+                    <small>Sneakerhead since '95</small>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=300&fit=crop" alt="Operations lead">
+                </div>
+                <div class="member-info">
+                    <h4>Thabo Nkosi</h4>
+                    <p>Operations Director</p>
+                    <small>Logistics expert</small>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop" alt="Customer experience">
+                </div>
+                <div class="member-info">
+                    <h4>Kelebogile Moeng</h4>
+                    <p>Customer Experience</p>
+                    <small>Your sneaker guide</small>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop" alt="Creative director">
+                </div>
+                <div class="member-info">
+                    <h4>Michael Tlotleng</h4>
+                    <p>Creative Director</p>
+                    <small>Style curator</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Banner -->
+    <div class="cta-banner">
+        <h3>Ready to upgrade your sneaker game?</h3>
+        <p>Browse our latest collection — from classic silhouettes to exclusive drops.</p>
+        <a href="sneakers.html" class="cta-btn"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h4>Jom's Sneakers</h4>
+            <p>Your trusted sneaker destination in Botswana since 2020. Premium quality, authentic styles, and fast delivery.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="index.html">Home</a>
+            <a href="sneakers.html">Shop</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">Size Guide</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Returns & Exchanges</a>
+            <a href="#">FAQs</a>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <p><i class="fas fa-envelope"></i> hello@jomssneakers.com</p>
+            <p><i class="fas fa-phone-alt"></i> +267 71 234 567</p>
+            <p><i class="fab fa-instagram"></i> @jomssneakers</p>
+        </div>
+    </div>
+    <div class="copyright">© 2026 Jom's Sneakers — Authentic Footwear. All rights reserved.</div>
+</footer>
+
+<script>
+    // Cart counter update from localStorage
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('jomsCart')) || [];
+        const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const badge = document.getElementById('cartNavCount');
+        if (badge) badge.innerText = total;
+    }
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (
