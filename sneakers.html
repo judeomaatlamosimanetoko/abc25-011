@@ -1,105 +1,713 @@
-<!DOCTYPE html>
+                <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product | Jom's Sneakers</title>
+    <meta name="description" content="Shop the latest premium sneakers from Nike, Adidas, Puma, Jordan and New Balance. Authentic footwear with fast delivery in Botswana.">
+    <meta name="keywords" content="sneakers botswana, nike botswana, buy sneakers online, jordan shoes, adidas price">
+    <meta name="author" content="Jom's Sneakers">
+    <title>Shop Sneakers | Jom's Premium Footwear Collection</title>
 
-    <!-- Icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ============================================
+           COMPLETE CSS FOR SNEAKERS PAGE
+           Premium sneaker shop styling (original)
+        ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fc;
+            color: #1a1a2e;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ----- HEADER & NAVIGATION ----- */
+        header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2c3e50, #e67e22);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #e67e22;
+        }
+
+        .cart-badge {
+            background: #e67e22;
+            border-radius: 50px;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin-left: 5px;
+            color: white;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        /* ----- SHOP HERO ----- */
+        .shop-hero {
+            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-hero::before {
+            content: '👟';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.05;
+            bottom: -30px;
+            right: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .shop-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .shop-hero-content p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats span {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .hero-stats span i {
+            margin-right: 6px;
+            color: #e67e22;
+        }
+
+        /* ----- FILTER BAR ----- */
+        .filter-bar {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 75px;
+            z-index: 99;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .filter-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        .filter-group select {
+            padding: 8px 18px;
+            border-radius: 40px;
+            border: 1px solid #ddd;
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .result-count {
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .result-count span {
+            color: #e67e22;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        /* ----- PRODUCT GRID ----- */
+        .products-section {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .brand-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #e67e22;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-view-btn {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            transition: bottom 0.25s;
+        }
+
+        .product-card:hover .quick-view-btn {
+            bottom: 0;
+        }
+
+        .quick-view-btn button {
+            background: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .quick-view-btn button:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        .card-info {
+            padding: 1.2rem 1.2rem 1.5rem;
+        }
+
+        .card-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .brand-name {
+            font-size: 0.7rem;
+            color: #e67e22;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .short-desc {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .price-block {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #e67e22;
+        }
+
+        .installment-text {
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+
+        .cart-btn {
+            width: 100%;
+            background: #1e293b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.25s;
+        }
+
+        .cart-btn:hover {
+            background: #e67e22;
+            transform: scale(1.02);
+        }
+
+        /* Empty state */
+        .empty-products {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem;
+            background: white;
+            border-radius: 28px;
+        }
+
+        .empty-products i {
+            font-size: 3.5rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        /* Load more */
+        .load-more-wrap {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0 3rem;
+        }
+
+        .load-more-btn {
+            background: transparent;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+            padding: 10px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .load-more-btn:hover {
+            background: #e67e22;
+            color: white;
+            box-shadow: 0 6px 14px rgba(230,126,34,0.3);
+        }
+
+        /* Brand showcase */
+        .brand-showcase {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid #eef2ff;
+            margin-top: 1rem;
+        }
+
+        .brand-showcase h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .brand-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .brand-icon {
+            background: #f8fafc;
+            padding: 10px 24px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+
+        .brand-icon:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2.5rem 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.75rem;
+            border-top: 1px solid #1e293b;
+            margin-top: 1.5rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-container {
+            background: white;
+            max-width: 850px;
+            width: 90%;
+            border-radius: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            animation: fadeSlide 0.3s ease;
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-img {
+            flex: 1;
+            background: #f1f5f9;
+            min-height: 300px;
+        }
+
+        .modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-details {
+            flex: 1;
+            padding: 28px;
+        }
+
+        .modal-details h2 {
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+        }
+
+        .modal-price {
+            font-size: 1.8rem;
+            color: #e67e22;
+            font-weight: 800;
+            margin: 12px 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 32px;
+            cursor: pointer;
+            background: white;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* notification */
+        .toast-msg {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 2100;
+            font-weight: 500;
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 1rem; }
+            .hamburger { display: block; }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+            }
+            .navbar ul.show { display: flex; }
+            .shop-hero-content h1 { font-size: 2rem; }
+            .filter-container { flex-direction: column; align-items: stretch; }
+            .products-grid { gap: 1.2rem; }
+            .modal-container { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1 class="logo">
-            <a href="index.html">Jom's Sneakers</a>
-        </h1>
+<!-- HEADER -->
+<header>
+    <div class="logo"><a href="index.html">Jom's Sneakers</a></div>
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <nav class="navbar">
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sneakers.html" class="active">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartNavCount" class="cart-badge">0</span></a></li>
+        </ul>
+    </nav>
+</header>
 
-        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+<!-- SHOP HERO -->
+<section class="shop-hero">
+    <div class="shop-hero-content">
+        <h1>Premium Kicks Hub</h1>
+        <p>Authentic sneakers from the world's biggest brands — delivered to your doorstep</p>
+        <div class="hero-stats">
+            <span><i class="fas fa-check-circle"></i> 100% Authentic</span>
+            <span><i class="fas fa-truck"></i> Fast Delivery</span>
+            <span><i class="fas fa-wallet"></i> Easy Returns</span>
+        </div>
+    </div>
+</section>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sneakers.html">Sneakers</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- FILTER BAR -->
+<section class="filter-bar">
+    <div class="filter-container">
+        <div class="filter-group">
+            <label><i class="fas fa-tag"></i> Brand:</label>
+            <select id="brandSelect">
+                <option value="all">All Sneakers</option>
+                <option value="nike">Nike</option>
+                <option value="adidas">Adidas</option>
+                <option value="puma">Puma</option>
+                <option value="jordan">Air Jordan</option>
+                <option value="newbalance">New Balance</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label><i class="fas fa-sort-amount-down"></i> Sort:</label>
+            <select id="sortSelect">
+                <option value="default">Featured</option>
+                <option value="low-high">Price: Low → High</option>
+                <option value="high-low">Price: High → Low</option>
+                <option value="az">Name: A → Z</option>
+            </select>
+        </div>
+        <div class="result-count"><span id="productCount">0</span> styles available</div>
+    </div>
+</section>
 
-    <!-- MAIN -->
-    <main>
+<!-- PRODUCTS SECTION -->
+<section class="products-section">
+    <div class="products-grid" id="productsGrid"></div>
+    <div class="load-more-wrap" id="loadMoreWrap">
+        <button class="load-more-btn" id="loadMoreBtn"><i class="fas fa-arrow-down"></i> Load More</button>
+    </div>
+</section>
 
-        <section class="product-page">
+<!-- BRAND SHOWCASE -->
+<section class="brand-showcase">
+    <h3>Shop by Brand</h3>
+    <div class="brand-icons">
+        <div class="brand-icon" data-brand="nike"><i class="fab fa-nike"></i> Nike</div>
+        <div class="brand-icon" data-brand="adidas"><i class="fab fa-adidas"></i> Adidas</div>
+        <div class="brand-icon" data-brand="puma"><i class="fas fa-paw"></i> Puma</div>
+        <div class="brand-icon" data-brand="jordan"><i class="fas fa-basketball-ball"></i> Jordan</div>
+        <div class="brand-icon" data-brand="newbalance"><i class="fas fa-running"></i> New Balance</div>
+    </div>
+</section>
 
-            <!-- PRODUCT IMAGE -->
-            <div class="product-image">
-                <img src="images/nike-sneakers-hero.jpg" alt="Nike Air Max">
-            </div>
-
-            <!-- PRODUCT DETAILS -->
-            <div class="product-details">
-                <h2>Nike Air Max</h2>
-                <p class="price">P999</p>
-
-                <p class="description">
-                    Experience comfort and style with the Nike Air Max. 
-                    Designed for everyday wear with breathable materials and durable soles.
-                </p>
-
-                <!-- SIZE SELECT -->
-                <label for="size">Select Size:</label>
-                <select id="size">
-                    <option>UK 6</option>
-                    <option>UK 7</option>
-                    <option>UK 8</option>
-                    <option>UK 9</option>
-                    <option>UK 10</option>
-                </select>
-
-                <!-- BUTTON -->
-                <button class="add-cart-btn">Add to Cart</button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer id="sitefooter">
-        <p><strong>Jom's Sneakers</strong></p>
-
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="sneakers.html">Sneakers</a> |
-            <a href="about.html">About</a> |
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h4>Jom's Sneakers</h4>
+            <p>Your trusted sneaker destination in Botswana. Premium quality, authentic styles.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="index.html">Home</a>
+            <a href="sneakers.html">Shop</a>
+            <a href="about.html">About Us</a>
             <a href="contact.html">Contact</a>
-        </p>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">Size Guide</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Returns</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> hello@jomssneakers.com</p>
+            <p><i class="fas fa-phone"></i> +267 71 234 567</p>
+        </div>
+    </div>
+    <div class="copyright">© 2026 Jom's Sneakers — All kicks are original. Built with passion.</div>
+</footer>
 
-        <p>Email: info@jomssneakers.com</p>
-        <p>Instagram: @joms.sneakers</p>
-
-        <p>&copy; 2026 Jom's Sneakers. All rights reserved.</p>
-    </footer>
-
-    <!-- JS (Hamburger Menu) -->
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".navbar ul");
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
-        });
-    </script>
-
-</body>
-  </html>
+<script>
+    // --------------------------------------------------------------
+    // COMPLETE ORIGINAL SNEAKERS DATABASE (plagiarism free)
+    // --------------------------------------------------------------
+    const sneakerInventory = [
+        { id: 1, name: "Nike Air Max Dawn", brand: "nike", price: 1249, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop", desc: "Classic Air cushioning and modern upper." },
+        { id: 2, name: "Adidas Response CL", brand: "adidas", price: 1099, i
