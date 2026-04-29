@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Jom's Sneakers. Customer support, store inquiries, returns, and wholesale questions. We're here to help 24/7.">
+    <meta name="keywords" content="contact sneakers botswana, customer support, jom's sneakers contact, shoe store gaborone">
+    <meta name="author" content="Jom's Sneakers">
+    <title>Contact Us | Jom's Sneakers Support</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           COMPLETE CSS FOR CONTACT PAGE
+           Clean, modern, fully responsive
+        ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafbfc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ----- HEADER & NAVIGATION ----- */
+        header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2c3e50, #e67e22);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #e67e22;
+        }
+
+        .cart-badge {
+            background: #e67e22;
+            border-radius: 50px;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin-left: 5px;
+            color: white;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        /* ========== CONTACT HERO ========== */
+        .contact-hero {
+            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '💬';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.04;
+            bottom: -30px;
+            right: -20px;
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* ========== MAIN CONTACT SECTION ========== */
+        .contact-main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Contact Info Cards */
+        .contact-info-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-align: center;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+
+        .info-icon {
+            width: 70px;
+            height: 70px;
+            background: #fef3e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+        }
+
+        .info-icon i {
+            font-size: 2rem;
+            color: #e67e22;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info-card p {
+            color: #475569;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-info-card a {
+            color: #e67e22;
+            font-weight: 500;
+        }
+
+        .contact-info-card a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links-mini {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links-mini a {
+            background: #f1f5f9;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.2s;
+            color: #334155;
+        }
+
+        .social-links-mini a:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form & Map Row */
+        .form-map-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Form Styling */
+        .contact-form-box {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
+
+        .contact-form-box h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-form-box h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e67e22;
+            border-radius: 3px;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            background: #fefefe;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e67e22;
+            box-shadow: 0 0 0 3px #e67e2220;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            background: #d35400;
+            transform: scale(1.02);
+        }
+
+        /* Map Box */
+        .map-box {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border: none;
+        }
+
+        .map-placeholder {
+            background: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 380px;
+            text-align: center;
+            color: #475569;
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ Accordion Section */
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #f1f5f9;
+        }
+
+        .faq-item:hover {
+            border-color: #e67e2240;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .faq-question i {
+            color: #e67e22;
+            transition: 0.2s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #475569;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            margin-top: 0.8rem;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2.5rem 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.75rem;
+            border-top: 1px solid #1e293b;
+            margin-top: 1.5rem;
+        }
+
+        /* Success Toast */
+        .toast-success {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #10b981;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            z-index: 1100;
+            font-weight: 500;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .form-map-row {
+                grid-template-columns: 1fr;
+            }
+            .map-box iframe {
+                min-height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            .hamburger {
+                display: block;
+            }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+            }
+            .navbar ul.show {
+                display: flex;
+            }
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            .contact-grid {
+                gap: 1.5rem;
+            }
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-main {
+                padding: 2rem 1rem;
+            }
+            .contact-info-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo"><a href="index.html">Jom's Sneakers</a></div>
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <nav class="navbar">
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sneakers.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartNavCount" class="cart-badge">0</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="contact-hero">
+    <h1>Let's Talk Sneakers</h1>
+    <p>Have a question about an order, sizing, or just want to say hello? We're all ears.</p>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="contact-main">
+
+    <!-- Contact Info Cards Row -->
+    <div class="contact-grid">
+        <div class="contact-info-card">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Visit Our Store</h3>
+            <p>Plot 123, Main Mall</p>
+            <p>Gaborone, Botswana</p>
+            <p><strong>Mon-Sat:</strong> 9am - 6pm</p>
+        </div>
+        <div class="contact-info-card">
+            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+            <h3>Call or WhatsApp</h3>
+            <p><a href="tel:+26771234567">+267 71 234 567</a></p>
+            <p><a href="tel:+2673112345">+267 31 123 456</a></p>
+            <p>Support Hours: 8am - 8pm</p>
+        </div>
+        <div class="contact-info-card">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <h3>Email Us</h3>
+            <p><a href="mailto:hello@jomssneakers.com">hello@jomssneakers.com</a></p>
+            <p><a href="mailto:support@jomssneakers.com">support@jomssneakers.com</a></p>
+            <div class="social-links-mini">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form + Map Row -->
+    <div class="form-map-row">
+        <!-- Contact Form -->
+        <div class="contact-form-box">
+            <h2>Send us a message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="fullName" placeholder="Kabelo Modise" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="email" placeholder="hello@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+267 71 234 567">
+                </div>
+                <div class="form-group">
+                    <label>Subject *</label>
+                    <select id="subject" required>
+                        <option value="">Select a topic</option>
+                        <option value="order">Order Inquiry</option>
+                        <option value="returns">Returns & Exchange</option>
+                        <option value="sizing">Sizing Help</option>
+                        <option value="wholesale">Wholesale / Bulk Order</option>
+                        <option value="feedback">Feedback / Suggestion</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea id="message" placeholder="Tell us how we can help you..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+
+        <!-- Map Location -->
+        <div class="map-box">
+            <div class="map-placeholder" id="mapContainer">
+                <i class="fas fa-store"></i>
+                <h3>Jom's Sneakers HQ</h3>
+                <p>Main Mall, Gaborone, Botswana</p>
+                <p style="font-size:0.8rem; margin-top:12px;">📍 Find us in the heart of the city</p>
+                <!-- Embed Google Map (Safe, free, no API key issues) -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57387.49782623226!2d25.902899739972924!3d-24.658918735496122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebb6b0aac3839df%3A0x2e05bc1efcdddfe2!2sGaborone%2C%20Botswana!5e0!3m2!1sen!2sbw!4v1700000000000!5m2!1sen!2sbw" 
+                    width="100%" 
+                    height="380" 
+                    style="border:0; display:block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Accordion Section - Quick Help -->
+    <div class="faq-section">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does shipping take?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Within Gaborone: 1-2 business days. Other regions in Botswana: 3-5 business days. You'll receive tracking info via SMS/email.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I return or exchange sneakers?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Yes! Unworn, original condition sneakers can be returned within 14 days. Free exchanges for size issues. Contact support for a return label.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are the sneakers 100% authentic?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Absolutely. We source directly from official brand distributors. Every pair is verified before shipping.</div>
